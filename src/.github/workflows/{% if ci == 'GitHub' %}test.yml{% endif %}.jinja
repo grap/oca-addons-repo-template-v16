@@ -34,6 +34,8 @@ set IMAGES = {
 }
 -%}
 jobs:
+{%- if false %}
+{#- GRAP Disable unreleased-deps#}
   unreleased-deps:
     runs-on: ubuntu-latest
     name: Detect unreleased dependencies
@@ -51,6 +53,7 @@ jobs:
                   fi
               fi
           done
+{%- endif %}
   test:
 {%- if odoo_version < 14 %}
     runs-on: ubuntu-20.04
