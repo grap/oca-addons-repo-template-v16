@@ -56,6 +56,8 @@ set IMAGES = {
 {%- endif -%}
 
 jobs:
+{%- if false %}
+{#- GRAP Disable unreleased-deps#}
   unreleased-deps:
     runs-on: ubuntu-latest
     name: Detect unreleased dependencies
@@ -73,6 +75,7 @@ jobs:
                   fi
               fi
           done
+{%- endif %}
   test:
     runs-on: ubuntu-22.04
     container: {% raw %}${{ matrix.container }}{% endraw %}
