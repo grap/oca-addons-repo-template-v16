@@ -122,6 +122,8 @@ repos:
       - id: oca-update-pre-commit-excluded-addons
       - id: oca-fix-manifest-website
         args: ["{{ repo_website }}"]
+{%- if false %}
+{#- GRAP Disable oca-gen-addon-readme, that generates a lot of conflict #}
       - id: oca-gen-addon-readme
         args:
           - --addons-dir=.
@@ -136,6 +138,7 @@ repos:
       {%- if use_pyproject_toml and generate_requirements_txt %}
       - id: oca-gen-external-dependencies
       {%- endif %}
+{%- endif %}
   - repo: https://github.com/OCA/odoo-pre-commit-hooks
     rev: {{ repo_rev.odoo_pre_commit_hooks }}
     hooks:
