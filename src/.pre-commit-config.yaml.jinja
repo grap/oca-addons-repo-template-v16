@@ -225,6 +225,8 @@ repos:
     hooks:
       - id: black
   {%- endif %}
+  {%- if false %}
+  {#- GRAP Disable prettier, as it generates useless changes in XML files #}
   - repo: local
     hooks:
       - id: prettier
@@ -240,6 +242,8 @@ repos:
         additional_dependencies:
           - "prettier@{{ repo_rev.prettier }}"
           - "@prettier/plugin-xml@{{ repo_rev.prettier_xml }}"
+  {#- END GRAP  #}
+  {%- endif %}
   - repo: local
     hooks:
       - id: eslint
