@@ -194,6 +194,7 @@ repos:
           - --org-name={{ org_slug }}
           - --repo-name={{ repo_slug }}
           - --if-source-changed
+          - --no-gen-html
           - --keep-source-digest
           {%- if convert_readme_fragments_to_markdown %}
           - --convert-fragments-to-markdown
