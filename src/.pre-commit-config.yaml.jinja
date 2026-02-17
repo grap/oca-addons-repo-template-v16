@@ -243,6 +243,8 @@ repos:
           - "@prettier/plugin-xml@{{ repo_rev.prettier_xml }}"
   {#- END GRAP  #}
   {%- endif %}
+  {%- if false %}
+  {#- GRAP Disable eslint, as it generates bad warning, and a weird 'prefetch' error to investigate #}
   - repo: local
     hooks:
       - id: eslint
@@ -258,6 +260,8 @@ repos:
           - "eslint@{{ repo_rev.eslint }}"
           - "eslint-plugin-jsdoc@{{ repo_rev.eslint_jsdoc }}"
           - "globals@{{ repo_rev.globals }}"
+  {#- END GRAP  #}
+  {%- endif %}
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: {{ repo_rev.pre_commit_hooks }}
     hooks:
